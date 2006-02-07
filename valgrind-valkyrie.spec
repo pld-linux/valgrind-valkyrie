@@ -1,3 +1,4 @@
+# NB! building this spec (currently) as root will nuke your /usr/bin directory ;)
 Summary:	Valkyrie GUI and XML merging tool for Memcheck outputs
 Name:		valgrind-valkyrie
 Version:	1.1.0
