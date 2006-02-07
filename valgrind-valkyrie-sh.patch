@@ -1,0 +1,33 @@
+--- valkyrie-1.1.0/config.tests/qt.test~	2006-02-07 15:50:58.000000000 +0200
++++ valkyrie-1.1.0/config.tests/qt.test	2006-02-07 15:50:59.000000000 +0200
+@@ -30,7 +30,7 @@
+ 
+ # include all the bits and pieces we need for output
+ testdir=`dirname $0`
+-source "$testdir/logging.sh"
++. "$testdir/logging.sh"
+ 
+ # ------------------------------------------------------------------
+ # even if set on the cmd-line, make sure we can find it
+--- valkyrie-1.1.0/config.tests/valgrind.test~	2005-11-27 18:49:15.000000000 +0200
++++ valkyrie-1.1.0/config.tests/valgrind.test	2006-02-07 15:56:19.000000000 +0200
+@@ -24,7 +24,7 @@
+ 
+ # include all the bits and pieces we need for output
+ testdir=`dirname $0`
+-source "$testdir/logging.sh"
++. "$testdir/logging.sh"
+ 
+ # ------------------------------------------------------------------
+ found=no
+--- valkyrie-1.1.0/config.tests/mysql.test~	2005-11-27 18:49:15.000000000 +0200
++++ valkyrie-1.1.0/config.tests/mysql.test	2006-02-07 15:56:41.000000000 +0200
+@@ -19,7 +19,7 @@
+ 
+ # include all the bits and pieces we need for output
+ testdir=`dirname $0`
+-source "$testdir/logging.sh"
++. "$testdir/logging.sh"
+ 
+ # regexps ----------------------------------------------------------
+ # to strip any trailing slashes from strings
