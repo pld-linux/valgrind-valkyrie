@@ -1,5 +1,6 @@
 # NB! building this spec (currently) as root will nuke your /usr/bin directory ;)
 Summary:	Valkyrie GUI and XML merging tool for Memcheck outputs
+Summary(pl):	Vaklyrie - graficzny interfejs i narzêdzie do ³±czenia XML dla wyj¶cia z Memchecka
 Name:		valgrind-valkyrie
 Version:	1.1.0
 Release:	0.1
@@ -20,6 +21,15 @@ for debugging and profiling x86-Linux programs.
 Valkyrie includes an auxiliary tool which can read XML output from
 multiple valgrind (memcheck) runs, merge them together into a single
 XML file, and optionally display the merged result in the GUI.
+
+%description -l pl
+Valkyrie to dostêpny na licencji GPL graficzny interfejs do Valgrinda
+- zestawu narzêdzi do diagnostyki i profilowania programów linuksowych
+na architekturze x86.
+
+Valkyrie zawiera pomocnicze narzêdzie, które odczytuje wyj¶cie w XML-u
+z wielu uruchomieñ valgrinda (memchecka), ³±czy je w pojedynczy plik
+XML i opcjonalnie wy¶wietla wynik ³±czenia w graficznym interfejsie.
 
 %prep
 %setup -q -n valkyrie-%{version}
