@@ -1,6 +1,6 @@
 # NB! building this spec (currently) as root will nuke your /usr/bin directory ;)
 Summary:	Valkyrie GUI and XML merging tool for Memcheck outputs
-Summary(pl.UTF-8):   Vaklyrie - graficzny interfejs i narzędzie do łączenia XML dla wyjścia z Memchecka
+Summary(pl.UTF-8):	Vaklyrie - graficzny interfejs i narzędzie do łączenia XML dla wyjścia z Memchecka
 Name:		valgrind-valkyrie
 Version:	1.1.0
 Release:	0.1
