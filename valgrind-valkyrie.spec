@@ -2,16 +2,19 @@
 Summary:	Valkyrie GUI and XML merging tool for Memcheck outputs
 Summary(pl.UTF-8):	Vaklyrie - graficzny interfejs i narzędzie do łączenia XML dla wyjścia z Memchecka
 Name:		valgrind-valkyrie
-Version:	1.1.0
+Version:	2.0.0
 Release:	0.1
 License:	GPL v2, GFDL (docs)
 Group:		Development/Tools
 Source0:	http://valgrind.org/downloads/valkyrie-%{version}.tar.bz2
-# Source0-md5:	b49d73801b49521af1c05c3f4ae2712f
-Patch0:		%{name}-sh.patch
+# Source0-md5:	a411dfb803f548dae5f988de0160aeb5
 URL:		http://valgrind.org/
-BuildRequires:	qt-devel
-Requires:	valgrind >= 3.0.0
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
+BuildRequires:	QtCore-devel
+BuildRequires:	QtGui-devel
+BuildRequires:	QtXml-devel
+Requires:	valgrind >= 3.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,30 +36,26 @@ XML i opcjonalnie wyświetla wynik łączenia w graficznym interfejsie.
 
 %prep
 %setup -q -n valkyrie-%{version}
-%patch0 -p1
 
 %build
-# not automake generated configure
-./configure \
-	--prefix=%{_prefix} \
-	--bindir=%{_bindir} \
-	--docdir=%{_docdir}/%{name}-%{version} \
-	--vg-dir=%{_prefix} \
-	--qt-dir=%{_prefix} \
-	--qt-lib=%{_libdir} \
-	--shared
-
+qmake-qt4 \
+	PREFIX=%{_prefix} \
+	BINDIR=%{_bindir} \
+	DATADIR=%{_datadir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	INSTALL_ROOT=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/valkyrie-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc INSTALL README doc/*.html doc/images
+%attr(755,root,root) %{_bindir}/valkyrie
